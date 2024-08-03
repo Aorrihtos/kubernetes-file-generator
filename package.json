@@ -4,41 +4,51 @@
   "description": "Extension to create new kubernetes files easily, with templates for each component ",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.92.0"
+    "vscode": "^1.22.0"
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [
-
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "kubernetes-file-generator.showTemplates",
-        "title": "Kubernetes Templates",
-        "category": "Kubernetes"
+        "command": "kubernetes-file-generator.createDeployment",
+        "title": "Create Deployment"
       },
       {
-          "command": "kubernetes-file-generator.createDeployment",
-          "title": "Create Deployment"
+        "command": "kubernetes-file-generator.createService",
+        "title": "Create Service"
       },
       {
-          "command": "kubernetes-file-generator.createService",
-          "title": "Create Service"
-      },
-      {
-          "command": "kubernetes-file-generator.createConfigMap",
-          "title": "Create ConfigMap"
+        "command": "kubernetes-file-generator.createConfigMap",
+        "title": "Create ConfigMap"
       }
-  ],
+    ],
+    "submenus": [
+      {
+        "id": "kubernetes-file-generator.submenu",
+        "label": "Kubernetes File Generator"
+      } 
+    ],
     "menus": {
       "explorer/context": [
         {
-          "command": "kubernetes-file-generator.showTemplates",
-          "when": "explorerResourceIsFolder",
-          "group": "navigation"
+          "submenu": "kubernetes-file-generator.submenu",
+          "group": "kubenetes"
+        }
+      ],
+      "kubernetes-file-generator.submenu": [
+        {
+          "command": "kubernetes-file-generator.createDeployment"
+        },
+        {
+          "command": "kubernetes-file-generator.createService"
+        },
+        {
+          "command": "kubernetes-file-generator.createConfigMap"
         }
       ]
     }
