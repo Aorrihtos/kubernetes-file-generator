@@ -15,21 +15,21 @@ function activate(context) {
   let createDeployment = vscode.commands.registerCommand(
     "kubernetes-file-generator.createDeployment",
     (uri) => {
-      createKubernetesTemplate(uri, "deployment.yaml", getDeploymentTemplate());
+      createKubernetesTemplate(uri, "deployment.yaml", getTemplateContent("deployment"));
     }
   );
 
   let createService = vscode.commands.registerCommand(
     "kubernetes-file-generator.createService",
     (uri) => {
-      createKubernetesTemplate(uri, "service.yaml", getServiceTemplate());
+      createKubernetesTemplate(uri, "service.yaml", getTemplateContent("service"));
     }
   );
 
   let createConfigMap = vscode.commands.registerCommand(
     "kubernetes-file-generator.createConfigMap",
     (uri) => {
-      createKubernetesTemplate(uri, "configmap.yaml", getConfigMapTemplate());
+      createKubernetesTemplate(uri, "configmap.yaml", getTemplateContent("configmap"));
     }
   );
 
@@ -54,53 +54,10 @@ function createKubernetesTemplate(uri, filename, content) {
   });
 }
 
-function getDeploymentTemplate() {
-  return `apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-deployment
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-      - name: my-container
-        image: nginx
-        ports:
-        - containerPort: 80
-`;
+function getTemplateContent(name){
+  return fs.readFileSync(`${__dirname}/kubernetes-templates/${name}.yaml`, 'utf-8');
 }
 
-function getServiceTemplate() {
-  return `apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: my-app
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-`;
-}
-
-function getConfigMapTemplate() {
-  return `apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: my-configmap
-data:
-  key: value
-`;
-}
 // This method is called when your extension is deactivated
 function deactivate() {}
 
