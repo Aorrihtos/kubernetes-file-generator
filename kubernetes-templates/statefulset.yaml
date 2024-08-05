@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-statefulset
+spec:
+  serviceName: "my-service"  # Headless service managing the StatefulSet
+  replicas: 3  # Number of replicas
+  selector:
+    matchLabels:
+      app: my-app  # Label selector for pods
+  template:
+    metadata:
+      labels:
+        app: my-app  # Labels for the pods
+    spec:
+      containers:
+      - name: my-container  # Name of the container
+        image: nginx:1.17.4  # Docker image to be used
+        ports:
+        - containerPort: 80  # Port exposed by the container
+        volumeMounts:
+        - name: my-storage  # Volume mount
+          mountPath: /usr/share/nginx/html  # Path to mount the volume
+  volumeClaimTemplates:
+  - metadata:
+      name: my-storage
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi  # Storage request
+      storageClassName: standard  # Storage class name

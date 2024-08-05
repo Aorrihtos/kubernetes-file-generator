@@ -2,18 +2,49 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-deployment
+  labels:
+    app: my-app
 spec:
-  replicas: 3
+  replicas: 3  # Number of replicas for the deployment
   selector:
     matchLabels:
-      app: my-app
+      app: my-app  # Label selector for pods
   template:
     metadata:
       labels:
-        app: my-app
+        app: my-app  # Labels for the pods
     spec:
       containers:
-      - name: my-container
-        image: nginx
+      - name: my-container  # Name of the container
+        image: nginx:1.17.4  # Docker image to be used
         ports:
-        - containerPort: 80
+        - containerPort: 80  # Port exposed by the container
+        env:  # Environment variables for the container
+        - name: ENV_VAR
+          value: "value"
+        resources:  # Resource requests and limits
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:  # Liveness probe configuration
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:  # Readiness probe configuration
+          httpGet:
+            path: /ready
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        volumeMounts:  # Mounting volumes to the container
+        - name: config-volume
+          mountPath: /etc/config
+      volumes:  # Volumes used by the deployment
+      - name: config-volume
+        configMap:
+          name: my-configmap

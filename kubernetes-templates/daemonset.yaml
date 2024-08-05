@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-daemonset
+  labels:
+    app: my-app
+spec:
+  selector:
+    matchLabels:
+      app: my-app  # Label selector for pods
+  template:
+    metadata:
+      labels:
+        app: my-app  # Labels for the pods
+    spec:
+      containers:
+      - name: my-container  # Name of the container
+        image: nginx:1.17.4  # Docker image to be used
+        ports:
+        - containerPort: 80  # Port exposed by the container

@@ -25,6 +25,38 @@
       {
         "command": "kubernetes-file-generator.createConfigMap",
         "title": "Create ConfigMap"
+      },
+      {
+        "command": "kubernetes-file-generator.cronJob",
+        "title": "Create CronJob"
+      },
+      {
+        "command": "kubernetes-file-generator.daemonSet",
+        "title": "Create DeamonSet"
+      },
+      {
+        "command": "kubernetes-file-generator.horizontalPodAutoescaller",
+        "title": "Create HorizontalPodAutoescaller"
+      },
+      {
+        "command": "kubernetes-file-generator.ingress",
+        "title": "Create Ingress"
+      },
+      {
+        "command": "kubernetes-file-generator.persistentVolume",
+        "title": "Create PersistentVolume"
+      },
+      {
+        "command": "kubernetes-file-generator.persistentVolumeClaim",
+        "title": "Create PersistentVolumeClaim"
+      },
+      {
+        "command": "kubernetes-file-generator.secret",
+        "title": "Create Secret"
+      },
+      {
+        "command": "kubernetes-file-generator.statefulSet",
+        "title": "Create StatefulSets"
       }
     ],
     "submenus": [
@@ -49,6 +81,30 @@
         },
         {
           "command": "kubernetes-file-generator.createConfigMap"
+        },
+        {
+          "command": "kubernetes-file-generator.cronJob"
+        },
+        {
+          "command": "kubernetes-file-generator.daemonSet"
+        },
+        {
+          "command": "kubernetes-file-generator.horizontalPodAutoescaller"
+        },
+        {
+          "command": "kubernetes-file-generator.ingress"
+        },
+        {
+          "command": "kubernetes-file-generator.persistentVolume"
+        },
+        {
+          "command": "kubernetes-file-generator.persistentVolumeClaim"
+        },
+        {
+          "command": "kubernetes-file-generator.secret"
+        },
+        {
+          "command": "kubernetes-file-generator.statefulSet"
         }
       ]
     }

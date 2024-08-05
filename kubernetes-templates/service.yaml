@@ -4,8 +4,9 @@ metadata:
   name: my-service
 spec:
   selector:
-    app: my-app
+    app: my-app  # Selector to find the pods to be exposed by the service
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
+  - protocol: TCP
+    port: 80  # Port exposed by the service
+    targetPort: 80  # Port on the container to which traffic is forwarded
+  type: ClusterIP  # Type of service (ClusterIP, NodePort, LoadBalancer, ExternalName)

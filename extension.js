@@ -33,6 +33,62 @@ function activate(context) {
     }
   );
 
+  let createCronjob = vscode.commands.registerCommand(
+    "kubernetes-file-generator.cronJob",
+    (uri) => {
+      createKubernetesTemplate(uri, "cronjob.yaml", getTemplateContent("cronjob"));
+    }
+  );
+
+  let createDaemonSet = vscode.commands.registerCommand(
+    "kubernetes-file-generator.daemonSet",
+    (uri) => {
+      createKubernetesTemplate(uri, "daemonset.yaml", getTemplateContent("daemonset"));
+    }
+  );
+
+  let createHorizontalPodAutoescaller = vscode.commands.registerCommand(
+    "kubernetes-file-generator.horizontalPodAutoescaller",
+    (uri) => {
+      createKubernetesTemplate(uri, "horizontalpodautoescaller.yaml", getTemplateContent("horizontalpodautoescaller"));
+    }
+  );
+
+  let createIngress = vscode.commands.registerCommand(
+    "kubernetes-file-generator.ingress",
+    (uri) => {
+      createKubernetesTemplate(uri, "ingress.yaml", getTemplateContent("ingress"));
+    }
+  );
+
+  let createPersistentVolume = vscode.commands.registerCommand(
+    "kubernetes-file-generator.persistentVolume",
+    (uri) => {
+      createKubernetesTemplate(uri, "persistentvolume.yaml", getTemplateContent("persistentvolume"));
+    }
+  );
+
+  let createPersistentVolumeClaim = vscode.commands.registerCommand(
+    "kubernetes-file-generator.persistentVolumeClaim",
+    (uri) => {
+      createKubernetesTemplate(uri, "persistentvolumeclaim.yaml", getTemplateContent("persistentvolumeclaim"));
+    }
+  );
+
+  let createSecret = vscode.commands.registerCommand(
+    "kubernetes-file-generator.secret",
+    (uri) => {
+      createKubernetesTemplate(uri, "secret.yaml", getTemplateContent("secret"));
+    }
+  );
+
+  let createStatefulSet = vscode.commands.registerCommand(
+    "kubernetes-file-generator.statefulSet",
+    (uri) => {
+      createKubernetesTemplate(uri, "statefulset.yaml", getTemplateContent("statefulset"));
+    }
+  );
+
   context.subscriptions.push(createDeployment, createService, createConfigMap);
 }
 

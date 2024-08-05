@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  rules:
+  - host: example.com  # Hostname to be exposed
+    http:
+      paths:
+      - path: /  # Path to match
+        pathType: Prefix
+        backend:
+          service:
+            name: my-service  # Service name
+            port:
+              number: 80  # Service port
+  tls:
+  - hosts:
+    - example.com  # TLS hosts
+    secretName: my-tls-secret  # Secret containing TLS certificates
