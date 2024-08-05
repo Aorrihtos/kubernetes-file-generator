@@ -1,13 +1,16 @@
 {
   "name": "kubernetes-file-generator",
-  "displayName": "kubenetes-file-generator",
+  "displayName": "Kubernetes File Generator",
   "description": "Extension to create new kubernetes files easily, with templates for each component ",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Sergio Ferrer Canet (Aorih)"
   },
   "publisher": "Aorih",
-  "icon": "https://github.com/Aorrihtos/kubernetes-file-generator/blob/master/resources/icon.png?raw=true",
+  "repository": {
+    "url": "https://github.com/Aorrihtos/kubernetes-file-generator"
+  },
+  "icon": "resources/icon.png",
   "license": "MIT",
   "engines": {
     "vscode": "^1.22.0"
@@ -121,7 +124,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.92.0",
+    "@types/vscode": "^1.22.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
     "eslint": "^8.57.0",
