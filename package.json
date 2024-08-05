@@ -2,7 +2,7 @@
   "name": "kubernetes-file-generator",
   "displayName": "kubenetes-file-generator",
   "description": "Extension to create new kubernetes files easily, with templates for each component ",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.22.0"
   },
