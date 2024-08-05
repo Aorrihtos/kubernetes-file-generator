@@ -16,7 +16,11 @@
     "vscode": "^1.22.0"
   },
   "categories": [
-    "Other"
+    "Snippets"
+  ],
+  "keywords": [
+    "k8s", "kubernetes", "snippets", "snippet", "templates", "template", "yaml", "yml",
+    "docker", "microservices", "configuration files"
   ],
   "activationEvents": [
   ],
