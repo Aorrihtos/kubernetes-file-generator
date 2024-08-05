@@ -7,7 +7,7 @@
     "name": "Sergio Ferrer Canet (Aorih)"
   },
   "publisher": "Aorih",
-  "icon": "",
+  "icon": "https://github.com/Aorrihtos/kubernetes-file-generator/blob/master/resources/icon.png?raw=true",
   "license": "MIT",
   "engines": {
     "vscode": "^1.22.0"
