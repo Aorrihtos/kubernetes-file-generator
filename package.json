@@ -2,7 +2,7 @@
   "name": "kubernetes-file-generator",
   "displayName": "Kubernetes File Generator",
   "description": "Extension to create new kubernetes files easily, with templates for each component ",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Sergio Ferrer Canet (Aorih)"
   },
@@ -16,7 +16,11 @@
     "vscode": "^1.22.0"
   },
   "categories": [
-    "Other"
+    "Snippets"
+  ],
+  "keywords": [
+    "k8s", "kubernetes", "snippets", "snippet", "templates", "template", "yaml", "yml",
+    "docker", "microservices", "configuration files"
   ],
   "activationEvents": [
   ],
