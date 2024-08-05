@@ -3,6 +3,12 @@
   "displayName": "kubenetes-file-generator",
   "description": "Extension to create new kubernetes files easily, with templates for each component ",
   "version": "1.0.0",
+  "author": {
+    "name": "Sergio Ferrer Canet (Aorih)"
+  },
+  "publisher": "Aorih",
+  "icon": "",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.22.0"
   },

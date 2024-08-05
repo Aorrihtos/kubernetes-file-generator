@@ -24,7 +24,7 @@
 
 ### Example
 
-![Example Animation](resources/kubernetes-file-generator.gif)
+![Example Animation](https://github.com/Aorrihtos/kubernetes-file-generator/blob/master/resources/kubernetes-file-generator.gif?raw=true)
 
 # Installation
 
